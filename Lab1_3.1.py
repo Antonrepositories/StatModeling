@@ -3,7 +3,7 @@ import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 
-N = 1000
+N = 100000
 
 #Генерація ВВ
 data = [random.random() for _ in range(N)]
@@ -33,5 +33,6 @@ print(f"P-value: {p_value}")
 plt.hist(data, bins=10, density=True, alpha=0.6, color='g', label='Empirical Data')
 plt.title('Гістограма')
 plt.xlabel('Значення')
+plt.ylabel('Щільність')
 plt.legend()
 plt.show()
