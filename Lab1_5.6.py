@@ -14,8 +14,12 @@ y_min, y_max = -np.pi, 3 * np.pi
 #Пошук
 K = 10000  #Кількість випадкових точок
 N = 100  #Кількість повторень пошуку
+#Для пошуку максимуму
 best_x1, best_x2 = None, None
 best_value = -float('inf')
+#Для пошуку мінімуму
+#best_x1, best_x2 = 1, 1
+#best_value = float('inf')
 
 #Випадковий пошук
 for i in range(N):
