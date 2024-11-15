@@ -8,7 +8,7 @@ a = 0.1
 num_realizations = 100  
 
 #M = [10000, 100000, 1000000]
-M = 1000
+M = 10000
 t = np.linspace(0, T, N)
 
 def w2_process(M, t):
@@ -75,7 +75,7 @@ for i, exit_time in enumerate(first_exit_times, 1):
     print(f"Реалізація {i}: Час виходу = {exit_time}")
 
 
-first_exit_times = np.array(first_exit_times)  
+#first_exit_times = np.array(first_exit_times)  
 
 sorted_times = np.sort(first_exit_times)
 
@@ -90,4 +90,14 @@ plt.ylabel("Ймовірність")
 plt.title(f"Емпірична функція розподілу часу першого виходу за рівень a={a}")
 plt.grid()
 plt.legend()
+plt.show()
+
+
+# Побудова гістограми всіх значень
+plt.figure(figsize=(10, 6))
+plt.hist(all_realizations.flatten(), bins=30, color='skyblue', edgecolor='blue', alpha=0.7)
+plt.title('Гістограма значень W2 для всіх реалізацій')
+plt.xlabel('W2 значення')
+plt.ylabel('Частота')
+plt.grid()
 plt.show()
